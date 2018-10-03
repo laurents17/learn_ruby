@@ -50,4 +50,4 @@ def factorial(num)
     print total
 end
 
-factorial(100)
+factorial(4)
