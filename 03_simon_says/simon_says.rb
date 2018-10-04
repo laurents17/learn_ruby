@@ -43,16 +43,14 @@ end
 def titleize(title)
     title_array = title.split(" ")
     for word in title_array
-        word = word.capitalize!
-        if word.downcase == "and" or word.downcase == "over" or word.downcase == "of" or word.downcase == "the" or word.downcase == "an" or word.downcase == "for" or word.downcase == "nor" or word.downcase =="but" or word.downcase =="or" or word.downcase =="yet" or word.downcase == "so" 
-            word = word.downcase!
-        elsif word = title_array[0] 
+        if word == title_array[0]
             word = word.capitalize!
+        elsif word.downcase == "and" or word.downcase == "over" or word.downcase == "of" or word.downcase == "the" or word.downcase == "an" or word.downcase == "for" or word.downcase == "nor" or word.downcase =="but" or word.downcase =="or" or word.downcase =="yet" or word.downcase == "so" 
+            word = word.downcase!
+        else word = word.capitalize!
         end
     end
     print title_array.join(" ")
 end
 
 titleize("but for the grace of god go we")
-
-#Still having the issue where I get errors if the first letter in the input string is lready capitalized- what's that all about? Something to do ith the capitalize! method?
