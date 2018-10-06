@@ -2,19 +2,26 @@
 def pig_latin
     print "Gimme some text: "
     text = gets.chomp
-    # stick text into a space-delimited array
+    # stick text into a space-delimited array with elements "word"s
     text_a = text.split(" ")
+    # stick words into an array of arrays with letters
+    # letters_a = text_a.map { |word| word.split(//) }
     # iterate through text_a
-    for word in text_a
-    #split words into arrays with each letter as elements (the arrays are still inside the text_a array)
-        letters = word.split(//)
+
+
     
     # loop for if word starts with a vowel
-    
-    # loop for if a word starts with a consonant
-     
+    for word in text_a
+        if ["a", "e", "i", "o", "u"].include?(word[0]) or ["A", "E", "I", "O", "U"].include?(word[0])
+            word << "ay"
+        else
+            word << "#{word[0,2]}ay"
+            word[0,2] = ""
+        end
     end
-    
-    
+
+print text_a.join(" ")
     
 end
+ 
+pig_latin
